@@ -4,18 +4,19 @@ import datetime
 import asyncio
 import random
 import json
+import os
 from discord import app_commands
 from discord.ext import commands, tasks
 from dotenv import load_dotenv
 from motor.motor_asyncio import AsyncIOMotorClient
 load_dotenv()
-
+Mongo = os.getenv('mongo')
 class Gamble(commands.GroupCog):
 
     def __init__(self, client):
         self.client = client
         self.invites = {}
-        self.cluster = AsyncIOMotorClient("mongodb+srv://Banker:l3BY9knLXptBbDS1@cluster0.qnihg.mongodb.net/?retryWrites=true&w=majority")
+        self.cluster = AsyncIOMotorClient(Mongo)
         self.db = self.cluster["Banker"]
         self.collection = self.db["UserData"]
         self.tax_collection = self.db["Tax"]
