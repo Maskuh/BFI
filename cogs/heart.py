@@ -12,13 +12,14 @@ from discord import ui
 import os
 import requests
 load_dotenv()
+Mongo = os.getenv('mongo')
 #______________________________
 
 class heart(commands.Cog):
 
     def __init__(self, client):
         self.client = client
-        self.cluster = AsyncIOMotorClient("mongodb+srv://Banker:l3BY9knLXptBbDS1@cluster0.qnihg.mongodb.net/?retryWrites=true&w=majority")
+        self.cluster = AsyncIOMotorClient(Mongo)
         self.db = self.cluster["PRIME"]
         self.mainsub = self.db["MainServer/Subserver"]
         self.BOT_TOKEN = os.getenv('DISCORD_TOKEN')
