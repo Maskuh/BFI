@@ -18,6 +18,7 @@ Mongo = os.getenv("mongo")
 
 
 class heart(commands.Cog):
+    """ """
 
     def __init__(self, client):
         self.client = client
@@ -294,6 +295,7 @@ class heart(commands.Cog):
 
 
 class ReportModal(ui.Modal, title="Report"):
+    """ """
     def __init__(self, client):
         super().__init__()
         self.client = client
