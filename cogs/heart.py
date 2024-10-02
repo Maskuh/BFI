@@ -6,8 +6,10 @@ import time
 
 import discord
 import requests
-from discord import app_commands, ui
-from discord.ext import commands, tasks
+from discord import app_commands
+from discord import ui
+from discord.ext import commands
+from discord.ext import tasks
 from discord.interactions import Interaction
 from dotenv import load_dotenv
 from motor.motor_asyncio import AsyncIOMotorClient
