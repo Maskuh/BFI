@@ -183,6 +183,9 @@ class heart(commands.Cog):
             await interaction.response.send_message(f"User {user_id} is not a Superadmin.")
         else:
             await interaction.response.send_message(f"Superadmin privileges removed from user {user_id}.")
+    @app_commands.command(description="Check your balance in a server.")
+    async def bal(self, interaction: discord.Interaction, member: discord.Member):
+        interaction.response.send_message("This is a filler text.")
     @app_commands.command(description="Create a bug report")
     async def report(self, interaction: discord.Interaction):
         await interaction.response.send_modal(ReportModal(self.client))
